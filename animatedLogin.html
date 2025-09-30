@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Login page</title>
+    <title>Animated Login Page</title>
     <link rel="stylesheet" href="animatedLogin.css">
 </head>
 <body>   
-    <h2> This is login Page </h2>
+    <h2>Welcome Back!</h2>
     <div class="container">
-      <h1 class="title">Login</h1>
-     <input type="email" name="text" placeholder="username" class="username">
-     <input type="password" name="password" class="pass" placeholder="password">
-     <button class="LoginBtn"> Login</button>
+        <h1 class="title">Login</h1>
+
+        <!-- Login form -->
+        <form>
+            <input type="email" name="email" placeholder="Username or Email" class="username" required>
+            <input type="password" name="password" placeholder="Password" class="pass" required>
+            
+            <div class="options">
+                <label>
+                    <input type="checkbox" name="remember"> Remember Me
+                </label>
+                <a href="#" class="forgot">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="LoginBtn">Login</button>
+        </form>
+
+        <div class="divider">
+            <span>OR</span>
+        </div>
+
+        <!-- Social login buttons -->
+        <div class="social-login">
+            <button class="social-btn google">Login with Google</button>
+            <button class="social-btn facebook">Login with Facebook</button>
+        </div>
+
+        <p class="signup-text">
+            Don't have an account? <a href="#">Sign Up</a>
+        </p>
     </div>
 
- 
+    <footer>
+        <p>&copy; 2025 GreeksHelp. All Rights Reserved.</p>
+    </footer>
 </body>
-
 </html>
-
-
