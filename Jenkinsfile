@@ -3,12 +3,15 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "greekshelp-site"
+        CONTAINER_NAME = "greekshelp"
     }
+
+
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/AnnaReddybandi/greekshelp.git'
+                git branch: 'main', url: 'https://github.com/AnnaReddybandi/greekshelp.git'
             }
         }
 
@@ -20,8 +23,11 @@ pipeline {
 
         stage('Deploy Container') {
             steps {
-                sh "docker stop greekshelp || true && docker rm greekshelp || true"
-                sh "docker run -d -p 8080:80 --name greekshelp $DOCKER_IMAGE"
+                sh """
+                docker stop $CONTAINER_NAME || true
+                docker rm $CONTAINER_NAME || true
+                docker run -d -p 8080:80 --name $CONTAINER_NAME $DOCKER_IMAGE
+                """
             }
         }
     }
