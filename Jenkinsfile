@@ -7,7 +7,6 @@ pipeline {
     }
 
 
-
     stages {
         stage('Checkout') {
             steps {
@@ -26,7 +25,7 @@ pipeline {
                 sh """
                 docker stop $CONTAINER_NAME || true
                 docker rm $CONTAINER_NAME || true
-                docker run -d -p 8080:80 --name $CONTAINER_NAME $DOCKER_IMAGE
+                docker run -d -p 8090:80 --name $CONTAINER_NAME $DOCKER_IMAGE
                 """
             }
         }
