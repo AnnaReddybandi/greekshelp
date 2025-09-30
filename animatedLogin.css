@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 20;
     box-sizing: border-box;
     font-family: 'pappins', sans-serif;
 }
@@ -104,4 +104,5 @@ body{
 }
 .LoginBtn:hover{
 border: 2px solid red;
+
 }
